@@ -1,8 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <vector>
 using namespace std;
-
-#define MAX_HISTORIAL 3
 
 int potencia(int base, int exponente);
 int squareRoot(int numero);
@@ -23,8 +22,9 @@ int main()
 	int operando_1;
 	int operando_2;
 	double resultado;
-	Operacion historial[MAX_HISTORIAL];
-	int contador_historial = 0;
+	std::vector<Operacion> historial;
+	Operacion op;
+	int pos = 1;
 
 	do
 	{
@@ -36,6 +36,7 @@ int main()
 		cout << "5 - potencia" << endl;
 		cout << "6 - raiz cuadrada" << endl;
 		cout << "7 - mostrar historial" << endl;
+		cout << "8 - eliminar elemento" << endl;
 		cout << "0 - para salir" << endl;
 
 		cin >> opcion;
@@ -74,9 +75,16 @@ int main()
 				resultado = squareRootNewton(operando_1);
 				break;
 			case 7:
-				for (int i = 0; i < contador_historial; i++) {
-					cout << historial[i].operando_1 << " " << historial[i].operador << " " << historial[i].operando_2 << " = " << historial[i].resultado << endl;
+				for (Operacion op : historial) {
+					cout << "[" << pos << "] " << op.operando_1 << " " << op.operador << " " << op.operando_2 << " = " << op.resultado << endl;
+					pos++;
 				}
+				pos = 1;
+				break;
+			case 8:
+				cout << "Seleccion que elemento eliminar";
+				cin >> pos;
+				historial[pos - 1] = op;
 				break;
 			default:
 				cout << "Opcion no valida" << endl;
@@ -84,15 +92,12 @@ int main()
 			}
 
 			if (opcion >= 1 && opcion <= 6) {
-				if (contador_historial == MAX_HISTORIAL) {
-					contador_historial = 0;
-				}
-				historial[contador_historial].operando_1 = operando_1;
-				historial[contador_historial].operando_2 = operando_2;
-				historial[contador_historial].resultado = resultado;
-				historial[contador_historial].operador = opcionToSimbolo(opcion);
-
-				contador_historial++;
+				Operacion op;
+				op.operando_1 = operando_1;
+				op.operador = opcionToSimbolo(opcion);
+				op.operando_2 = operando_2;
+				op.resultado = resultado;
+				historial.push_back(op);
 			}
 			
 			cout << "El resultado es " << resultado << endl;
