@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Direccion.hpp"
 
 using namespace std;
 
@@ -8,9 +9,11 @@ private:
 	string dni;
 	string nombre;
 	string apellido;
-	string direccion;
+	Direccion& direccion;
 public:
-	Persona(string dni, string nombre, string apellido, string direccion);
+	Persona(string dni, string nombre, string apellido, Direccion &direccion);
 
 	string getNombreCompleto();
+
+	string toString();
 };

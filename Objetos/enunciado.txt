@@ -1,0 +1,16 @@
+modelar un auto en formato de programacion orientada a objetos.
+el auto tiene marca, modelo y color y puede avanzar, doblar y frenar.
+el auto tiene un motor y el motor tiene una cilindrada, cantidad de cilindros, torque y potencia
+el auto tiene un dueño que es una persona
+
+
+encapsulamiento
+	getter y setter
+composicion y asociacion
+constructores
+
+metodos toString
+
+polimorfismo
+sobrecarga (de metodos y de operadores)
+herencia
