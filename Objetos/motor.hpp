@@ -12,9 +12,10 @@ private:
 	double torque;
 	double potencia;
 public:
-	Motor(double cilindros, int cantCilindros, double torque, double potencia);
-
-   double getCilindrada();
+	Motor(double cilindrada, int cantCilindros, double torque, double potencia);
+	Motor();
+	
+   	double getCilindrada();
     int getCantidadCilindros();
     double getTorque();
     double getPotencia();

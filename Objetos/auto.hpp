@@ -11,10 +11,10 @@ private:
 	string marca;
 	string modelo;
 	string color;
-	Motor& Motor;
+	Motor& motor;
+	string placa;
 public:
-	Auto(string marca, string modelo, string color, Motor &Motor);
-
-
-
+	Auto(string marca, string modelo, string color, Motor &motor, string placa);
+	Auto();
+	string toString();
 };
