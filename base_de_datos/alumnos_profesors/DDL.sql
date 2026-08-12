@@ -1,0 +1,50 @@
+PRAGMA foreign_key = ON;
+
+CREATE TABLE IF NOT EXISTS profesores (
+	legajo INTEGER PRIMARY KEY,
+	nombre TEXT NOT NULL,
+	apellido TEXT NOT NULL,
+	catedra TEXT
+);
+
+
+
+CREATE TABLE IF NOT EXISTS alumnos (
+	dni INTEGER PRIMARY KEY,
+	nombre TEXT NOT NULL,
+	apellido TEXT NOT NULL,
+	fechaNac TEXT
+);
+
+CREATE TABLE IF NOT EXISTS direcciones_profes(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	calle TEXT,
+	estado TEXT,
+	pais TEXT,
+	id_profesor INTEGER NOT NULL,
+	FOREIGN KEY (id_profesor) REFERENCES profesores(legajo)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS direcciones_alumnos(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	calle TEXT,
+	estado TEXT,
+	pais TEXT,
+	dni_alumno INTEGER NOT NULL,
+	FOREIGN KEY (dni_alumno) REFERENCES alumnos(dni)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS profesores_alumnos(
+	dni INTEGER NOT NULL,
+	legajo INTEGER NOT NULL,
+	FOREIGN KEY (dni) REFERENCES alumnos(dni)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+	FOREIGN KEY (legajo) REFERENCES profesores(legajo)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+);
