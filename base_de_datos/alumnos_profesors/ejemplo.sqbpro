@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/base_de_datos/ejemplo.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1699"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="ALUMNOS" custom_title="0" dock_id="1" table="4,7:mainALUMNOS"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011e00ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">PRAGMA foreign_key = ON;
+CREATE TABLE departamentos (
+codigo INTEGER PRIMARY KEY AUTOINCREMENT,
+nombre TEXT NOT NULL
+);
+
+CREATE TABLE empleados (
+legajo INTEGER PRIMARY KEY AUTOINCREMENT,
+fecha_de_nacimiento DATE NOT NULL,
+nombre TEXT NOT NULL,
+segundo_nombre TEXT,
+apellido TEXT NOT NULL,
+codigo INTEGER,
+FOREIGN KEY (codigo) REFERENCES departamentos (codigo) ON DELETE SET NULL
+);
+
+CREATE TABLE telefonos (
+numero INTEGER PRIMARY KEY,
+legajo INTEGER NOT NULL,
+FOREIGN KEY (legajo) REFERENCES empleados (legajo) ON DELETE CASCADE
+);
+
+INSERT INTO departamentos (nombre)
+VALUES
+('finanzas'), ('Recursos Humanos');
+
+INSERT INTO empleados (legajo, fecha_de_nacimiento, nombre, segundo_nombre, apellido, codigo)
+VALUES
+(123456, '2005-08-12', 'Jose', 'Fernando', 'Martinez', 1),
+(1002, '1988-11-22', 'María', NULL, 'Gomez', 1),
+(1003, '1995-03-10', 'Lucas', 'Fernández', 'Martín', 2);
+
+INSERT INTO telefonos (numero, legajo) VALUES
+('+541144445555', 123456),
+('+541166667777', 123456),
+('+541122223333', 1002),
+('+541199998888', 1003);
+
+SELECT
+	e.legajo,
+	e.nombre,
+	e.segundo_nombre,
+	e.apellido,
+	e.fecha_de_nacimiento,
+	d.nombre AS departamento,
+	t.numero AS telefono
+FROM empleados e
+INNER JOIN departamentos d ON e.codigo = d.codigo
+INNER JOIN telefonos t ON e.legajo = t.legajo;
+
+SELECT
+	e.legajo,
+	e.nombre,
+	e.segundo_nombre,
+	e.apellido,
+	e.fecha_de_nacimiento,
+	d.nombre AS departamento
+FROM empleados e
+LEFT JOIN departamentos d ON e.codigo = d.codigo;
+
+SELECT
+	e.legajo,
+	e.nombre,
+	e.segundo_nombre,
+	e.apellido,
+	e.fecha_de_nacimiento,
+	d.nombre AS departamento
+FROM empleados e
+RIGHT JOIN departamentos d ON e.codigo = d.codigo;
+
+SELECT
+	e.legajo,
+	e.nombre,
+	e.segundo_nombre,
+	e.apellido,
+	e.fecha_de_nacimiento,
+	d.nombre AS departamento
+FROM empleados e
+FULL OUTER JOIN departamentos d ON e.codigo = d.codigo;
+
+SELECT
+	e.legajo,
+	e.nombre,
+	e.segundo_nombre,
+	e.apellido,
+	e.fecha_de_nacimiento,
+	t.numero AS telefono
+FROM empleados e
+FULL OUTER JOIN telefonos t ON e.legajo = t.legajo;</sql><current_tab id="0"/></tab_sql></sqlb_project>
