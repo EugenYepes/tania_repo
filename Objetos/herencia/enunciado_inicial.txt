@@ -1,0 +1,12 @@
+Enunciado inicial de POO con herencia
+
+Crear una clase base llamada Persona con atributos como nombre y edad, 
+y una clase derivada llamada Estudiante que herede de Persona y 
+agregue un atributo que represente la carrera, pero esta vez la carrera debe ser un objeto. 
+Luego, implementar un programa simple que cree un objeto Estudiante y muestre sus datos.
+
+Además, crear una clase derivada llamada Profesor que también herede de Persona y 
+que tenga un atributo que represente la especialidad, también como objeto. Luego, 
+implementar un programa que cree tanto un Estudiante como un Profesor y muestre sus datos.
+
+Nivel: inicial
