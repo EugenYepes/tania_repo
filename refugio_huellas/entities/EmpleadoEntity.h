@@ -1,69 +1,39 @@
-#include <iostream>
+#include <string>
+#include "Persona.h"
 
 using namespace std;
 
-enum class Turno {
+enum class Turno
+{
 	MATUTINO,
-	VESPERTINO = 10,
-	NOCTURNO
+	VESPERTINO
 };
 
-class EmpleadoEntity{
+class EmpleadoEntity: Persona
+{
 private:
-	string telefono;
-	string correo;
 	double sueldo;
 	Turno turno;
-    string nombre; 
-    string apellido;
 
 public:
-	
-	string getTelefono() {
-		return telefono;
-	}
 
-	void setTelefono(string telefono) {
-		this->telefono = telefono;
-	}
-
-	string getCorreo() {
-		return correo;
-	}
-
-	void setCorreo(string correo) {
-		this->correo = correo;
-	}
-
-	double getSueldo() {
+	double getSueldo() const
+	{
 		return sueldo;
 	}
 
-	void setSueldo(double sueldo) {
+	void setSueldo(double sueldo)
+	{
 		this->sueldo = sueldo;
 	}
 
-	Turno getTurno() {
+	Turno getTurno() const
+	{
 		return turno;
 	}
 
-	void setTurno(Turno turno) {
+	void setTurno(Turno turno)
+	{
 		this->turno = turno;
-	}
-
-	string getNombre() {
-		return nombre;
-	}
-
-	void setNombre(string nombre) {
-		this->nombre = nombre;
-	}
-
-	string getApellido() {
-		return apellido;
-	}
-
-	void setApellido(string apellido) {
-		this->apellido = apellido;
 	}
 };

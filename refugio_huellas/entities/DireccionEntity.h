@@ -1,46 +1,60 @@
-#include <iostream>
+#pragma once
+
+#include <string>
 
 using namespace std;
 
-class DireccionEntity{
+class DireccionEntity
+{
 private:
 	string calle;
-	string ciudad;
-	string provincia;
-	string codigoPostal;
+	string estado;
+	string pais;
+	string numero;
 
 public:
-	
+	int id = 0;
 
-	string getCalle() {
+	int getId() const { return id; }
+	void setId(int id) { this->id = id; }
+
+	string getCalle() const
+	{
 		return calle;
 	}
 
-	void setCalle(string calle) {
+	void setCalle(string calle)
+	{
 		this->calle = calle;
 	}
 
-	string getCiudad() {
-		return ciudad;
+	string getEstado() const
+	{
+		return estado;
 	}
 
-	void setCiudad(string ciudad) {
-		this->ciudad = ciudad;
+	void setEstado(string estado)
+	{
+		this->estado = estado;
 	}
 
-	string getProvincia() {
-		return provincia;
+	string getPais() const
+	{
+		return pais;
 	}
 
-	void setProvincia(string provincia) {
-		this->provincia = provincia;
+	void setPais(string pais)
+	{
+		this->pais = pais;
 	}
 
-	string getCodigoPostal() {
-		return codigoPostal;
+	string getNumero() const
+	{
+		return numero;
 	}
 
-	void setCodigoPostal(string codigoPostal) {
-		this->codigoPostal = codigoPostal;
+	void setNumero(string numero)
+	{
+		this->numero = numero;
 	}
 };
