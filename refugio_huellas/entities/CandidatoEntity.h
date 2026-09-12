@@ -1,3 +1,6 @@
+#ifndef CANDIDATOENTITY_H
+#define CANDIDATOENTITY_H
+
 #include <iostream>
 #include "DireccionEntity.h"
 #include "Persona.h"
@@ -31,3 +34,5 @@ public:
 		this->direccion = direccion;
 	}
 };
+
+#endif

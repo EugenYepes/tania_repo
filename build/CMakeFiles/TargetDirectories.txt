@@ -1,0 +1,3 @@
+C:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/build/CMakeFiles/refugio_huellas.dir
+C:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/build/CMakeFiles/ZERO_CHECK.dir

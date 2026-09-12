@@ -1,3 +1,6 @@
+#ifndef ANIMALENTITY_H
+#define ANIMALENTITY_H
+
 #include "EmpleadoEntity.h"
 #include <iostream>
 
@@ -31,9 +34,17 @@ public:
 		this->id = id;
 	}
 
-	Estado getEstado() const
+	string getEstado() const
 	{
-		return estado;
+		switch (this->estado)
+		{
+		case Estado::NO_ADOPTADO:
+			return "NO_ADOPTADO";
+		case Estado::ADOPTADO:
+			return "ADOPTADO";
+		default:
+			return "";
+		}
 	}
 
 	void setEstado(Estado estado)
@@ -81,3 +92,5 @@ public:
 		this->cuidador = cuidador;
 	}
 };
+
+#endif

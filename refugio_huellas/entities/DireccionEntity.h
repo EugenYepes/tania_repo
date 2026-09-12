@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DIRECCIONENTITY_H
+#define DIRECCIONENTITY_H
 
 #include <string>
 
@@ -58,3 +59,5 @@ public:
 		this->numero = numero;
 	}
 };
+
+#endif

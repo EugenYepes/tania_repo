@@ -1,0 +1,10 @@
+^C:\USERS\EUGEN\DESKTOP\CLASSES\PREPLY\TANIA\EJ\REFUGIO_HUELLAS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/refugio_huellas -BC:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/build --check-stamp-file C:/Users/eugen/Desktop/Classes/Preply/Tania/Ej/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

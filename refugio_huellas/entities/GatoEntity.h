@@ -1,16 +1,13 @@
+#ifndef GATOENTITY_H
+#define GATOENTITY_H
+
 #include <iostream>
 #include "EmpleadoEntity.h"
 #include "AnimalEntity.h"
 
 using namespace std;
 
-enum class Estado
-{
-	NO_ADOPTADO = 0,
-	ADOPTADO = 1
-};
-
-class GatoEntity : Animal
+class GatoEntity : public Animal
 {
 private:
 	string test;
@@ -37,3 +34,5 @@ public:
 		this->indoor = indoor;
 	}
 };
+
+#endif

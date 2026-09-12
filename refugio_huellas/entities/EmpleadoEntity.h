@@ -1,3 +1,6 @@
+#ifndef EMPLEADOENTITY_H
+#define EMPLEADOENTITY_H
+
 #include <string>
 #include "Persona.h"
 
@@ -9,7 +12,7 @@ enum class Turno
 	VESPERTINO
 };
 
-class EmpleadoEntity: Persona
+class EmpleadoEntity : public Persona
 {
 private:
 	double sueldo;
@@ -27,9 +30,16 @@ public:
 		this->sueldo = sueldo;
 	}
 
-	Turno getTurno() const
+	string getTurnoString() const
 	{
-		return turno;
+		switch (this->turno) {
+			case Turno::MATUTINO:
+				return "MATUTINO";
+			case Turno::VESPERTINO:
+				return "VESPERTINO";
+			default:
+				return "";
+		}
 	}
 
 	void setTurno(Turno turno)
@@ -37,3 +47,5 @@ public:
 		this->turno = turno;
 	}
 };
+
+#endif
