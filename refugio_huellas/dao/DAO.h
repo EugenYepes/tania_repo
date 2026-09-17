@@ -23,7 +23,9 @@ public:
 	}
 
 	
-	void DAO::createStatement(const char *query, sqlite3_stmt** stmt);
+	void createStatement(const char *query, sqlite3_stmt** stmt);
+
+	void executeStatement(sqlite3_stmt* stmt);
 
 	sqlite3* getDb() {
 		return db;

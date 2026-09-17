@@ -11,6 +11,7 @@ add_executable(refugio_huellas
     dao/EmpleadoDAO.cpp
 	dao/CandidatoDAO.cpp
     lib/sqlite3.c
+    dao/DAO.cpp
 )
 
 target_include_directories(refugio_huellas PRIVATE
