@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS candidatos (
 	mascotas TEXT,
 	nombre TEXT NOT NULL,
 	apellido TEXT NOT NULL,
-	direccion_id INTEGER  NOT NULL,
+	direccion_id INTEGER NOT NULL,
 	PRIMARY KEY (telefono,correo),
 	FOREIGN KEY (direccion_id) REFERENCES direcciones (id)
 );
