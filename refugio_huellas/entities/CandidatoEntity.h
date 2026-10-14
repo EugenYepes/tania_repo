@@ -1,25 +1,23 @@
 #ifndef CANDIDATOENTITY_H
 #define CANDIDATOENTITY_H
 
-#include <iostream>
+#include <string>
 #include "DireccionEntity.h"
 #include "Persona.h"
-
-using namespace std;
 
 class CandidatoEntity: public Persona
 {
 private:
-	string mascotas;
+	std::string mascotas;
 	DireccionEntity direccion;
 
 public:
-	const string &getMascotas() const
+	const std::string &getMascotas() const
 	{
 		return mascotas;
 	}
 
-	void setMascotas(const string &mascotas)
+	void setMascotas(const std::string &mascotas)
 	{
 		this->mascotas = mascotas;
 	}

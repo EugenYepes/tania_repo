@@ -1,6 +1,27 @@
 #include "entities/CandidatoEntity.h"
+#include <iostream>
+#include <httplib.h>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 int main(void)
 {
-	std::cout << "hola";
+	httplib::Server server;
+	server.Get("/test", [](const httplib::Request &req, httplib::Response &res)
+	{
+		std::cout << "Se recibio una solicitud GET en /test" << std::endl;
+		json response = {
+			{"status", "exito"},
+			{"mensaje", "El servidor inicio correctamente"}
+		};
+		std::cout << "Se responde una solicitud GET en /test" << std::endl;
+
+		res.set_content(response.dump(4), "application/json"); 
+	});
+
+	std::cout << "Servidor iniciado ANTES en http://localhost:8080" << std::endl;
+	server.listen("0.0.0.0", 3000);
+	std::cout << "Servidor iniciado en http://localhost:8080" << std::endl;
+			
 }

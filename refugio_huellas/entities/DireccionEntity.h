@@ -3,15 +3,13 @@
 
 #include <string>
 
-using namespace std;
-
 class DireccionEntity
 {
 private:
-	string calle;
-	string estado;
-	string pais;
-	string numero;
+	std::string calle;
+	std::string estado;
+	std::string pais;
+	std::string numero;
 
 public:
 	int id = 0;
@@ -19,42 +17,42 @@ public:
 	int getId() const { return id; }
 	void setId(int id) { this->id = id; }
 
-	string getCalle() const
+	std::string getCalle() const
 	{
 		return calle;
 	}
 
-	void setCalle(string calle)
+	void setCalle(std::string calle)
 	{
 		this->calle = calle;
 	}
 
-	string getEstado() const
+	std::string getEstado() const
 	{
 		return estado;
 	}
 
-	void setEstado(string estado)
+	void setEstado(std::string estado)
 	{
 		this->estado = estado;
 	}
 
-	string getPais() const
+	std::string getPais() const
 	{
 		return pais;
 	}
 
-	void setPais(string pais)
+	void setPais(std::string pais)
 	{
 		this->pais = pais;
 	}
 
-	string getNumero() const
+	std::string getNumero() const
 	{
 		return numero;
 	}
 
-	void setNumero(string numero)
+	void setNumero(std::string numero)
 	{
 		this->numero = numero;
 	}

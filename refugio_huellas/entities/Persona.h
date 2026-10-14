@@ -1,47 +1,45 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
-#include <iostream>
-
-using namespace std;
+#include <string>
 
 class Persona {
 private:
-	string nombre;
-	string apellido;
-	string correoElectronico;
-	string telefono; 
+	std::string nombre;
+	std::string apellido;
+	std::string correoElectronico;
+	std::string telefono; 
 
 public:
-	string getNombre() const {
+	std::string getNombre() const {
 		return nombre;
 	}
 
-	void setNombre(const string& nombre) {
+	void setNombre(const std::string& nombre) {
 		this->nombre = nombre;
 	}
 
-	string getApellido() const {
+	std::string getApellido() const {
 		return apellido;
 	}
 
-	void setApellido(const string& apellido) {
+	void setApellido(const std::string& apellido) {
 		this->apellido = apellido;
 	}
 
-	string getCorreoElectronico() const {
+	std::string getCorreoElectronico() const {
 		return correoElectronico;
 	}
 
-	void setCorreoElectronico(const string& correoElectronico) {
+	void setCorreoElectronico(const std::string& correoElectronico) {
 		this->correoElectronico = correoElectronico;
 	}
 
-	string getTelefono() const {
+	std::string getTelefono() const {
 		return telefono;
 	}
 
-	void setTelefono(const string& telefono) {
+	void setTelefono(const std::string& telefono) {
 		this->telefono = telefono;
 	}
 

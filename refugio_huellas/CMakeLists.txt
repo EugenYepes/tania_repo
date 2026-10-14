@@ -10,6 +10,7 @@ add_executable(refugio_huellas
     main.cpp
     dao/EmpleadoDAO.cpp
 	dao/CandidatoDAO.cpp
+    dao/DireccionDAO.cpp
     lib/sqlite3.c
     dao/DAO.cpp
 )
@@ -22,6 +23,7 @@ target_include_directories(refugio_huellas PRIVATE
 )
 
 if (WIN32)
+    target_compile_definitions(refugio_huellas PRIVATE _WIN32_WINNT=0x0A00)
     target_link_libraries(refugio_huellas PRIVATE ws2_32)
 endif()
 
