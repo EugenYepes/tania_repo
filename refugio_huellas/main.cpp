@@ -20,8 +20,13 @@ int main(void)
 		res.set_content(response.dump(4), "application/json"); 
 	});
 
-	std::cout << "Servidor iniciado ANTES en http://localhost:8080" << std::endl;
+	server.Post("/empleado", [](const httplib::Request &req, httplib::Response &res){
+		
+	});
+
+	std::cout << "Servidor iniciado ANTES en http://localhost:3000" << std::endl;
+
 	server.listen("0.0.0.0", 3000);
-	std::cout << "Servidor iniciado en http://localhost:8080" << std::endl;
+	std::cout << "Servidor iniciado en http://localhost:3000" << std::endl;
 			
 }
