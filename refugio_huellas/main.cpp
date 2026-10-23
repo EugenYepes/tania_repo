@@ -2,6 +2,7 @@
 #include <iostream>
 #include <httplib.h>
 #include <nlohmann/json.hpp>
+#include "controllers/Controller.h"
 
 using json = nlohmann::json;
 
@@ -20,9 +21,7 @@ int main(void)
 		res.set_content(response.dump(4), "application/json"); 
 	});
 
-	server.Post("/empleado", [](const httplib::Request &req, httplib::Response &res){
-		
-	});
+	server.Post("/empleado", crearEmpleado);
 
 	std::cout << "Servidor iniciado ANTES en http://localhost:3000" << std::endl;
 

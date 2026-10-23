@@ -14,12 +14,12 @@ void GatoDAO::guardarGato(GatoEntity gato) {
 		DAO::createStatement(sqlInsert, &stmt);
 
 		// Vincular los valores del empleado a la sentencia SQL
-		sqlite3_bind_text(stmt, 1, gato.getNombre().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 1, gato.getNombre().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_int(stmt, 2, gato.getEdad());
-		sqlite3_bind_text(stmt, 3, gato.getTest().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 4, gato.getIndoor().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 5, gato.getDiagnostico().c_str(), -1, SQLITE_STATIC); //FK ?
-        sqlite3_bind_text(stmt, 6, gato.getEstado().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 3, gato.getTest().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 4, gato.getIndoor().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 5, gato.getDiagnostico().c_str(), -1, SQLITE_TRANSIENT); //FK ?
+        sqlite3_bind_text(stmt, 6, gato.getEstado().c_str(), -1, SQLITE_TRANSIENT);
 
 		DAO::executeStatement(stmt);
 	} catch(const std::runtime_error& re) {

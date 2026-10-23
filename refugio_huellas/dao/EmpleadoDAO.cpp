@@ -12,12 +12,13 @@ void EmpleadoDAO::guardarEmpleado(EmpleadoEntity empleado) {
 		DAO::createStatement(sqlInsert, &stmt);
 
 		// Vincular los valores del empleado a la sentencia SQL
-		sqlite3_bind_text(stmt, 1, empleado.getTelefono().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 2, empleado.getCorreoElectronico().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 1, empleado.getTelefono().c_str(), -1, SQLITE_TRANSIENT);
+		cout << "Correo electrónico a insertar: " << empleado.getCorreoElectronico().c_str() << endl;
+		sqlite3_bind_text(stmt, 2, empleado.getCorreoElectronico().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_double(stmt, 3, empleado.getSueldo());
-		sqlite3_bind_text(stmt, 4, empleado.getNombre().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 5, empleado.getApellido().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 6, empleado.getTurnoString().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 4, empleado.getNombre().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 5, empleado.getApellido().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 6, empleado.getTurnoString().c_str(), -1, SQLITE_TRANSIENT);
 
 
 		DAO::executeStatement(stmt);
@@ -25,4 +26,3 @@ void EmpleadoDAO::guardarEmpleado(EmpleadoEntity empleado) {
 		cerr << "ocurrio un error con la base de datos " << re.what();
 	}
 }
-

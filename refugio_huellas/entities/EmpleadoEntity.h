@@ -42,9 +42,15 @@ public:
 		}
 	}
 
-	void setTurno(Turno turno)
+	void setTurno(string turno)
 	{
-		this->turno = turno;
+		if (turno == "MATUTINO") {
+			this->turno = Turno::MATUTINO;
+		} else if (turno == "VESPERTINO") {
+			this->turno = Turno::VESPERTINO;
+		} else {
+			this->turno = Turno::MATUTINO; // Valor predeterminado
+		}
 	}
 };
 

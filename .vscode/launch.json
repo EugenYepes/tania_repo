@@ -2,6 +2,20 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Debug refugio_huellas (CMake)",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}\\refugio_huellas\\build\\refugio_huellas.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}\\refugio_huellas",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+			"preLaunchTask": "CMake: build refugio_huellas"
+		},
+		{
 			"name": "Debug C (current file)",
 			"type": "cppdbg",
 			"request": "launch",

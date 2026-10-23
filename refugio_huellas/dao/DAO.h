@@ -14,7 +14,7 @@ private:
 public:
 	DAO() {
 		
-		int ret = sqlite3_open("refugio_huellas.db", &db);
+		int ret = sqlite3_open("refugio.db", &db);
 		if (ret != SQLITE_OK)
 		{
 			cerr << "Error al abrir la base de datos: " << sqlite3_errmsg(db) << endl;

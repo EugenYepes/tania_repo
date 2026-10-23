@@ -16,11 +16,11 @@ void CandidatoDAO::guardarCandidato(CandidatoEntity candidato) {
 		DAO::createStatement(sqlInsert, &stmt);
 
 		// Vincular los valores del empleado a la sentencia SQL
-		sqlite3_bind_text(stmt, 1, candidato.getTelefono().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 2, candidato.getCorreoElectronico().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 3, candidato.getMascotas().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 4, candidato.getNombre().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 5, candidato.getApellido().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 1, candidato.getTelefono().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 2, candidato.getCorreoElectronico().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 3, candidato.getMascotas().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 4, candidato.getNombre().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 5, candidato.getApellido().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_int(stmt, 6, candidato.getDireccion().getId()); // no supe como hacer la referencia a direccion
 
 

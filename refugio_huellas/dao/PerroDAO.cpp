@@ -14,11 +14,11 @@ void PerroDAO::guardarPerro(PerroEntity perro) {
 		DAO::createStatement(sqlInsert, &stmt);
 
 		// Vincular los valores del empleado a la sentencia SQL
-		sqlite3_bind_text(stmt, 1, perro.getNombre().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 1, perro.getNombre().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_int(stmt, 2, perro.getEdad());
-		sqlite3_bind_text(stmt, 3, perro.getRaza().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 4, perro.getDiagnostico().c_str(), -1, SQLITE_STATIC);
-		sqlite3_bind_text(stmt, 5, perro.getEstado().c_str(), -1, SQLITE_STATIC);
+		sqlite3_bind_text(stmt, 3, perro.getRaza().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 4, perro.getDiagnostico().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_text(stmt, 5, perro.getEstado().c_str(), -1, SQLITE_TRANSIENT);
 
 
 		DAO::executeStatement(stmt);
