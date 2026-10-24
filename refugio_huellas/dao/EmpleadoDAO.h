@@ -10,6 +10,8 @@ class EmpleadoDAO : public DAO
 public:
 	void guardarEmpleado(EmpleadoEntity empleado);
 
+	EmpleadoEntity getCuidadorConMenosMascotas();
+
 	EmpleadoEntity getEmpleado(string telefono, string email);
 
 	list<EmpleadoEntity> getAllEmpleados();

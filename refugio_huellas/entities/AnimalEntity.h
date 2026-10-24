@@ -52,6 +52,17 @@ public:
 		this->estado = estado;
 	}
 
+	void setEstado(string estado) {
+		
+		if (estado == "NO_ADOPTADO") {
+			this->estado = Estado::NO_ADOPTADO;
+		} else if (estado == "ADOPTADO") {
+			this->estado = Estado::ADOPTADO;
+		} else {
+			this->estado = Estado::NO_ADOPTADO;
+		}
+	}
+
 	int getEdad() const
 	{
 		return edad;

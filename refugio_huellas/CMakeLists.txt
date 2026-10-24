@@ -9,8 +9,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(refugio_huellas
     main.cpp
     controllers/EmpleadoController.cpp
+	controllers/CandidatoController.cpp
+	controllers/PerroController.cpp
     dao/EmpleadoDAO.cpp
 	dao/CandidatoDAO.cpp
+	dao/PerroDAO.cpp
     dao/DireccionDAO.cpp
     lib/sqlite3.c
     dao/DAO.cpp

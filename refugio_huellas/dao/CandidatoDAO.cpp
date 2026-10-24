@@ -21,8 +21,7 @@ void CandidatoDAO::guardarCandidato(CandidatoEntity candidato) {
 		sqlite3_bind_text(stmt, 3, candidato.getMascotas().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_text(stmt, 4, candidato.getNombre().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_text(stmt, 5, candidato.getApellido().c_str(), -1, SQLITE_TRANSIENT);
-		sqlite3_bind_int(stmt, 6, candidato.getDireccion().getId()); // no supe como hacer la referencia a direccion
-
+		sqlite3_bind_int(stmt, 6, candidato.getDireccion().getId());
 
 		DAO::executeStatement(stmt);
 	} catch(const std::runtime_error& re) {

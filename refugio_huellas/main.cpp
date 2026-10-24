@@ -22,6 +22,8 @@ int main(void)
 	});
 
 	server.Post("/empleado", crearEmpleado);
+	server.Post("/candidato", crearCandidato);
+	server.Post("/perro", crearPerro);
 
 	std::cout << "Servidor iniciado ANTES en http://localhost:3000" << std::endl;
 
