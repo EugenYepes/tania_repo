@@ -11,7 +11,7 @@ class GatoEntity : public Animal
 {
 private:
 	string test;
-	string indoor;
+	int indoor;
 
 public:
 	const string &getTest() const
@@ -24,12 +24,12 @@ public:
 		this->test = test;
 	}
 
-	const string &getIndoor() const
+	const int &getIndoor() const
 	{
 		return indoor;
 	}
 
-	void setIndoor(const string &indoor)
+	void setIndoor(const int &indoor)
 	{
 		this->indoor = indoor;
 	}

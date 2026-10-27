@@ -17,7 +17,7 @@ void GatoDAO::guardarGato(GatoEntity gato) {
 		sqlite3_bind_text(stmt, 1, gato.getNombre().c_str(), -1, SQLITE_TRANSIENT);
 		sqlite3_bind_int(stmt, 2, gato.getEdad());
 		sqlite3_bind_text(stmt, 3, gato.getTest().c_str(), -1, SQLITE_TRANSIENT);
-		sqlite3_bind_text(stmt, 4, gato.getIndoor().c_str(), -1, SQLITE_TRANSIENT);
+		sqlite3_bind_int(stmt, 4, gato.getIndoor());
 		sqlite3_bind_text(stmt, 5, gato.getDiagnostico().c_str(), -1, SQLITE_TRANSIENT); //FK ?
         sqlite3_bind_text(stmt, 6, gato.getEstado().c_str(), -1, SQLITE_TRANSIENT);
 

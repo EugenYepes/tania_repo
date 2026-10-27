@@ -13,16 +13,14 @@ void crearGato(const httplib::Request &req, httplib::Response &res)
 		gatoEntity.setEstado(request_body.at("estado").get<std::string>());
 		gatoEntity.setEdad(request_body["edad"]);
 		gatoEntity.setNombre(request_body["nombre"]);
-		gatoEntity.setDiagnostico(request_body["raza"]);
-
+		gatoEntity.setDiagnostico(request_body["diagnostico"]);
         gatoEntity.setTest(request_body["test"]);
         gatoEntity.setIndoor(request_body["indoor"]);
-
 
 		EmpleadoDAO empleadoDAO;
 		EmpleadoEntity cuidador = empleadoDAO.getCuidadorConMenosMascotas();
 		gatoEntity.setCuidador(&cuidador);
-
+		std::cout << "cuidador con menos mascotas encontrado " << cuidador.getNombre() << std::endl;
 		GatoDAO gatoDAO;
 		gatoDAO.guardarGato(gatoEntity);
 
