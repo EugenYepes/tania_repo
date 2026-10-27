@@ -11,10 +11,12 @@ add_executable(refugio_huellas
     controllers/EmpleadoController.cpp
 	controllers/CandidatoController.cpp
 	controllers/PerroController.cpp
+    controllers/GatoController.cpp
     dao/EmpleadoDAO.cpp
 	dao/CandidatoDAO.cpp
 	dao/PerroDAO.cpp
     dao/DireccionDAO.cpp
+    dao/GatoDAO.cpp
     lib/sqlite3.c
     dao/DAO.cpp
 )
